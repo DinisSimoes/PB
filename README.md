@@ -27,7 +27,7 @@ Caso exceda o número máximo de tentativas, a mensagem fica disponível em uma 
 
 **Solução:** implementar um outbox pattern:
 
-Ao criar um usuário, as mensagens que seriam enviadas para o RabbitMQ são gravadas em uma tabela auxiliar no banco de dados (Outbox).
+Ao criar um usuário, as mensagens que seriam enviadas para o RabbitMQ são gravadas em uma tabela auxiliar no banco de dados do MS Cliente (Outbox).
 Um worker lê essa tabela e tenta enviar as mensagens para as filas corretas (que no caso é para a fila de analise de crédito).
 Isso desacopla o cadastro de clientes da disponibilidade do RabbitMQ e garante que o usuário receba sucesso imediato, mesmo se o broker estiver offline.
 
@@ -47,6 +47,16 @@ Facilita monitoramento e troubleshooting.
 **Idempotência e deduplicação**
 - Adicionar controle de idempotência: cada mensagem tem ID único e o sistema verifica se já foi processada.
 - Evita problemas de duplicação em reprocessamentos.
+
+## Observabilidade
+Implementei a observabilidade utilizando **OpenTelemetry**, integrando com o **Grafana** e o **Tempo** para monitoramento e rastreamento distribuído.
+
+Configurei a famosa **“escadinha” de traceId**, garantindo que o mesmo identificador de rastreamento seja propagado por todo o fluxo — desde a **API REST** até o **worker do Cartão**.
+
+Isso permite correlacionar todos os eventos relacionados a um mesmo usuário ou operação, facilitando assim a análise de performance e o diagnóstico de erros em múltiplos microserviços. E com essa configuração, é possível visualizar no Grafana a linha do tempo completa de uma requisição, identificar gargalos e acompanhar o fluxo de mensagens publicadas e consumidas pelo RabbitMQ com contexto de tracing preservado.
+
+<img width="430" height="452" alt="image" src="https://github.com/user-attachments/assets/42b0ddf1-db35-47f8-aa79-d155969837be" />
+
 
 ## Lista dos projetos
 
