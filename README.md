@@ -53,4 +53,8 @@ PB_Clientes (API REST)
 PB_AnaliseCredito (Worker)
 PB_Cartao (Worker)
 PB_Orquestrador
-PB_Commom
+- [PB_Clientes](https://github.com/DinisSimoes/PB_Clientes)
+- [PB_AnaliseCredito](https://github.com/DinisSimoes/PB_AnaliseCredito)
+- [PB_Cartao](https://github.com/DinisSimoes/PB_Cartao)
+- [PB_Orquestrador](https://github.com/DinisSimoes/PB_Orquestrador)
+- [PB_Commom](https://github.com/DinisSimoes/PB_Common)
