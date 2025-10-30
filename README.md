@@ -39,7 +39,7 @@ Facilita monitoramento e troubleshooting.
 <img width="1461" height="602" alt="PB_Desafio_Versao_3" src="https://github.com/user-attachments/assets/550e9f69-a1ae-4629-bbe9-558dd25ddeae" />
 
 
-### versao 4 - Melhorias que poderiam ser implementadas futuramente
+### Versão 4 - Melhorias que poderiam ser implementadas futuramente
 **Job scheduler + alertas**
 - Monitorar a tabela Outbox e alertar se mensagens estiverem há muito tempo sem serem enviadas.
 - Possibilita intervenção manual antes que o volume cresça demais.
@@ -49,10 +49,7 @@ Facilita monitoramento e troubleshooting.
 - Evita problemas de duplicação em reprocessamentos.
 
 ## Lista dos projetos
-PB_Clientes (API REST)
-PB_AnaliseCredito (Worker)
-PB_Cartao (Worker)
-PB_Orquestrador
+
 - [PB_Clientes](https://github.com/DinisSimoes/PB_Clientes)
 - [PB_AnaliseCredito](https://github.com/DinisSimoes/PB_AnaliseCredito)
 - [PB_Cartao](https://github.com/DinisSimoes/PB_Cartao)
